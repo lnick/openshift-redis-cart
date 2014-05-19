@@ -6,6 +6,15 @@ sentinel_pid=pid/redis-sentinel.pid
 if [ -n $REDIS_PASSWORD ]; then
     CLI_AUTH="-a $REDIS_PASSWORD"
 fi
+
+
+
+ [ -f "/usr/bin/jem" ] && {
+     export OPENSHIFT_REDIS_HOST=$(ifconfig | grep -A1 venet0: | head -n 2 | sed -n '/dr:/{;s/.*dr://;s/ .*//;p;}');
+     export OPENSHIFT_REDIS_SENTINEL_HOST=$(ifconfig | grep -A1 venet0: | head -n 2 | sed -n '/dr:/{;s/.*dr://;s/ .*//;p;}');
+ }
+
+
 REDIS_CLI="-h $OPENSHIFT_REDIS_HOST -p $OPENSHIFT_REDIS_PORT $CLI_AUTH"
 REDIS_SENTINEL_CLI="-h $OPENSHIFT_REDIS_SENTINEL_HOST -p $OPENSHIFT_REDIS_SENTINEL_PORT $CLI_AUTH"
 
