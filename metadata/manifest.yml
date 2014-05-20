@@ -22,7 +22,7 @@ Scaling:
 Endpoints:
   - Private-IP-Name:   HOST
     Private-Port-Name: PORT
-    Private-Port:      16379
+    Private-Port:      6379
     Public-Port-Name:  PROXY_PORT
   - Private-IP-Name:   SENTINEL_HOST
     Private-Port-Name: SENTINEL_PORT
