@@ -19,3 +19,9 @@ fi
 
 client_result "You can configure various Redis scaling and persistence modes by setting"
 client_result "environment variables - consult the cartridge README for more info."
+
+which gem && exit 0;
+cd /tmp
+wget "http://production.cf.rubygems.org/rubygems/rubygems-2.2.2.tgz" -O /tmp/rubygems.tgz
+tar xfvz rubygems.tgz && cd rubygems-2.2.2/ && ruby setup.rb --no-ri --no-rdoc;
+gem install redis --no-ri --no-rdoc;
