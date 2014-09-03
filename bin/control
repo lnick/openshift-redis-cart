@@ -72,6 +72,7 @@ function start() {
             echo "Redis failed to start - $ret" 1>&2
             return $ret
         fi
+        echo "Redis node started successfully!"
     fi
 
     if [ "$REDIS_SENTINEL" == "1" ]; then
@@ -102,6 +103,7 @@ function stop() {
     fi
 
     if [ $m -eq 0 ] && [ $s -eq 0 ]; then
+        echo "Redis node stopped!"
         return 0
     fi
 
