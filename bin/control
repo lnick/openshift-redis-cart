@@ -64,6 +64,7 @@ function update() {
 
 function start() {
     if ! [ -f $pid ]; then
+        chmod 755 /opt/repo/env; 
         echo $REDIS_CLI > env/REDIS_CLI
         erb conf/redis.conf.erb | redis-server -
 
