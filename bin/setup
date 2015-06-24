@@ -8,7 +8,7 @@ for dir in logs pid tmp env; do
 	mkdir -p $dir
 done
 
-chmod 755 /opt/repo/env; 
+chmod -r 755 /opt/repo/env; 
 
 mkdir -p $OPENSHIFT_DATA_DIR/.redis/dbs
 
