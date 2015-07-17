@@ -74,6 +74,8 @@ function start() {
             return $ret
         fi
         echo "Redis node started successfully!"
+    else
+	echo "Redis server is already started"
     fi
 
     if [ "$REDIS_SENTINEL" == "1" ]; then
@@ -90,6 +92,7 @@ function start() {
 }
 
 function stop() {
+    [ ! -e $pid ] && echo "Redis server is already stopped";
     m=0
     s=0
 
