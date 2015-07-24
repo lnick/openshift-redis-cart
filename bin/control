@@ -92,7 +92,8 @@ function start() {
 }
 
 function stop() {
-    [ ! -e $pid ] && echo "Redis server is already stopped";
+    local redis_process=$(ps aux | grep redis-server | grep -v grep);
+    [ -z "$redis_process" ] && echo "Redis server is already stopped" && return 0;
     m=0
     s=0
 
