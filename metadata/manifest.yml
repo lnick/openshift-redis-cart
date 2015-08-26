@@ -4,11 +4,12 @@ Display-Name: Redis
 Description: "Redis is a NoSQL database server"
 Version: "2.6"
 Website: https://github.com/smarterclayton/openshift-redis-cart
-Source-Url: https://github.com/jelastic-public-cartridges/openshift-redis-cart.git
+Source-Url: https://github.com/lnick/openshift-redis-cart.git
 Cartridge-Version: 0.1.0
 License: GPL
 Vendor: smarterclayton
 Cartridge-Vendor: smarterclayton
+Cartridge-Subdomain : neo4j
 Categories:
   - service
   - database
